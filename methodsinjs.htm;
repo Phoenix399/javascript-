@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    
+    <body>
+        <h1> String Methods in JavaScript</h1>
+        <p>Basic Methods</p>
+        <script>
+            var str = "Hello, World!";
+            document.write( str.toUpperCase())
+            document.write("<br>");
+
+            document.write(str.toLowerCase())
+            document.write("<br>");
+            document.write(str.startsWith("Hello"))
+            document.write("<br>");
+            
+
+            //Test Method => returns true or false
+            var strl = "I learnt JavaScript";
+            var patt = new RegExp("JavaScript");
+            var res = patt.test(strl);
+            document.write(res);
+        </script>
+    </body>
+
+</html>
