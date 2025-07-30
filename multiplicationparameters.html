@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Using Functions with Parameters</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0984e3;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+
+        .section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-left: 5px solid #0984e3;
+        }
+
+        .section h2 {
+            color: #0984e3;
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .result {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        .calculator-section {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+
+        .input-group input {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            width: 120px;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #0984e3;
+            box-shadow: 0 0 5px rgba(9, 132, 227, 0.3);
+        }
+
+        .btn {
+            background: #0984e3;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #74b9ff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .output {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 1.1rem;
+            min-height: 50px;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #856404;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .demo-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-card h3 {
+            color: #0984e3;
+            margin-top: 0;
+        }
+
+        .parameter-info {
+            background: #e8f4ff;
+            border-left: 4px solid #2196f3;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .input-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .input-group input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>✖️ Multiplication Using Functions with Parameters</h1>
+
+        <!-- Basic Function Example -->
+        <div class="section">
+            <h2>📝 1. Basic Multiplication Function</h2>
+            <p>A simple function with two parameters that multiplies them together:</p>
+            
+            <div class="code-block">
+// Basic multiplication function with parameters
+function multiply(a, b) {
+    return a * b;
+}
+
+// Usage examples
+let result1 = multiply(5, 3);     // Parameters: 5 and 3
+let result2 = multiply(12, 4);    // Parameters: 12 and 4
+let result3 = multiply(7, 8);     // Parameters: 7 and 8
+
+console.log("5 × 3 =", result1);  // Output: 15
+console.log("12 × 4 =", result2); // Output: 48
+console.log("7 × 8 =", result3);  // Output: 56
+            </div>
+
+            <div class="parameter-info">
+                <strong>Parameters Explained:</strong><br>
+                • <span class="highlight">a</span> - First number (multiplicand)<br>
+                • <span class="highlight">b</span> - Second number (multiplier)<br>
+                • <span class="highlight">return</span> - Returns the product (a × b)
+            </div>
+        </div>
+
+        <!-- Advanced Functions -->
+        <div class="section">
+            <h2>🔧 2. Advanced Multiplication Functions</h2>
+            
+            <div class="grid">
+                <div class="demo-card">
+                    <h3>🎯 Multiple Parameters</h3>
+                    <div class="code-block">
+// Function with multiple parameters
+function multiplyThree(a, b, c) {
+    return a * b * c;
+}
+
+// Usage
+let result = multiplyThree(2, 3, 4);
+console.log("2 × 3 × 4 =", result); // 24
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>🔄 Default Parameters</h3>
+                    <div class="code-block">
+// Function with default parameters
+function multiplyWithDefault(a, b = 1) {
+    return a * b;
+}
+
+// Usage
+console.log(multiplyWithDefault(5));    // 5 × 1 = 5
+console.log(multiplyWithDefault(5, 3)); // 5 × 3 = 15
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>📊 Array Parameters</h3>
+                    <div class="code-block">
+// Function that multiplies array elements
+function multiplyArray(numbers) {
+    let result = 1;
+    for (let num of numbers) {
+        result *= num;
+    }
+    return result;
+}
+
+// Usage
+let nums = [2, 3, 4, 5];
+console.log("Product:", multiplyArray(nums)); // 120
+                    </div>
+                </div>
+
+                <div class="demo-card">
+                    <h3>⚡ Arrow Function</h3>
+                    <div class="code-block">
+// Arrow function with parameters
+const multiplyArrow = (a, b) => a * b;
+
+// One-liner for multiple numbers
+const multiplyAll = (...numbers) => 
+    numbers.reduce((acc, num) => acc * num, 1);
+
+// Usage
+console.log(multiplyArrow(6, 7));      // 42
+console.log(multiplyAll(2, 3, 4, 5));  // 120
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Calculator -->
+        <div class="calculator-section">
+            <h2>🧮 Interactive Multiplication Calculator</h2>
+            <p>Test the multiplication functions with your own numbers:</p>
+
+            <div class="input-group">
+                <label>Number 1:</label>
+                <input type="number" id="num1" placeholder="Enter first number" value="5">
+                
+                <label>Number 2:</label>
+                <input type="number" id="num2" placeholder="Enter second number" value="3">
+                
+                <button class="btn" onclick="calculateBasic()">Basic Multiply</button>
+            </div>
+
+            <div class="input-group">
+                <label>Number 3:</label>
+                <input type="number" id="num3" placeholder="Third number" value="2">
+                
+                <button class="btn" onclick="calculateThree()">Multiply Three</button>
+                <button class="btn" onclick="calculatePower()">Power Function</button>
+            </div>
+
+            <div class="input-group">
+                <label>Array (comma-separated):</label>
+                <input type="text" id="arrayInput" placeholder="e.g., 2,3,4,5" value="2,3,4" style="width: 200px;">
+                
+                <button class="btn" onclick="calculateArray()">Multiply Array</button>
+                <button class="btn" onclick="demonstrateAll()">Show All Examples</button>
+            </div>
+
+            <div class="output" id="output">
+                👆 Click any button above to see the multiplication results!
+            </div>
+        </div>
+
+        <!-- Real-world Examples -->
+        <div class="section">
+            <h2>🌟 3. Real-World Multiplication Functions</h2>
+            
+            <div class="grid">
+                <div class="demo-card">
+                    <h3>💰 Price Calculator</h3>
+                    <div class="code-block">
+function calculateTotal(price, quantity, taxRate = 0.1) {
+    let subtotal = price * quantity;
+    let tax = subtotal * taxRate;
+    return subtotal + tax;
+}
+
+// Calculate: $15 item × 3 quantity + 10% tax
+let total = calculateTotal(15, 3, 0.1);
+console.log("Total cost: $" + total.toFixed(2)); // $49.50
+                    </div>
+                    <button class="btn" onclick="calculatePrice()">Test Price Calculator</button>
+                </div>
+
+                <div class="demo-card">
+                    <h3>📐 Area Calculator</h3>
+                    <div class="code-block">
+function rectangleArea(length, width) {
+    return length * width;
+}
+
+function circleArea(radius) {
+    return Math.PI * radius * radius;
+}
+
+// Examples
+console.log("Rectangle (10×5):", rectangleArea(10, 5)); // 50
+console.log("Circle (r=3):", circleArea(3).toFixed(2)); // 28.27
+                    </div>
+                    <button class="btn" onclick="calculateAreas()">Test Area Calculator</button>
+                </div>
+
+                <div class="demo-card">
+                    <h3>⏱️ Time Calculator</h3>
+                    <div class="code-block">
+function convertToSeconds(hours, minutes, seconds = 0) {
+    return (hours * 3600) + (minutes * 60) + seconds;
+}
+
+function calculateWorkPay(hours, hourlyRate, overtimeRate = 1.5) {
+    let regularPay = Math.min(hours, 40) * hourlyRate;
+    let overtimeHours = Math.max(0, hours - 40);
+    let overtimePay = overtimeHours * hourlyRate * overtimeRate;
+    return regularPay + overtimePay;
+}
+                    </div>
+                    <button class="btn" onclick="calculateTime()">Test Time Calculator</button>
+                </div>
+
+                <div class="demo-card">
+                    <h3>🎯 Gaming Score</h3>
+                    <div class="code-block">
+function calculateGameScore(basePoints, multiplier, bonusRound = false) {
+    let score = basePoints * multiplier;
+    if (bonusRound) {
+        score = score * 2; // Double points in bonus round
+    }
+    return score;
+}
+
+// Example: 100 base points × 3 multiplier × bonus
+let gameScore = calculateGameScore(100, 3, true);
+console.log("Final Score:", gameScore); // 600
+                    </div>
+                    <button class="btn" onclick="calculateGame()">Test Game Score</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Function Types Summary -->
+        <div class="section">
+            <h2>📋 4. Function Parameter Types Summary</h2>
+            <div class="code-block">
+// 1. REQUIRED PARAMETERS - Must be provided
+function multiply(a, b) {
+    return a * b;
+}
+
+// 2. DEFAULT PARAMETERS - Have fallback values
+function multiplyWithDefault(a, b = 1) {
+    return a * b;
+}
+
+// 3. REST PARAMETERS - Accept unlimited arguments
+function multiplyAll(...numbers) {
+    return numbers.reduce((acc, num) => acc * num, 1);
+}
+
+// 4. OBJECT PARAMETERS - Pass multiple values as object
+function calculateRectangle({length, width, height = 1}) {
+    return length * width * height;
+}
+
+// 5. CALLBACK PARAMETERS - Functions as parameters
+function processNumbers(a, b, operation) {
+    return operation(a, b);
+}
+
+// Usage examples:
+console.log(multiply(5, 3));                    // Required: 15
+console.log(multiplyWithDefault(7));            // Default: 7
+console.log(multiplyAll(2, 3, 4, 5));          // Rest: 120
+console.log(calculateRectangle({length: 5, width: 3})); // Object: 15
+console.log(processNumbers(8, 4, multiply));    // Callback: 32
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============ BASIC MULTIPLICATION FUNCTIONS ============
+
+        // 1. Basic multiplication function with two parameters
+        function multiply(a, b) {
+            return a * b;
+        }
+
+        // 2. Multiplication with three parameters
+        function multiplyThree(a, b, c) {
+            return a * b * c;
+        }
+
+        // 3. Multiplication with default parameters
+        function multiplyWithDefault(a, b = 1) {
+            return a * b;
+        }
+
+        // 4. Multiplication using array parameter
+        function multiplyArray(numbers) {
+            let result = 1;
+            for (let num of numbers) {
+                result *= num;
+            }
+            return result;
+        }
+
+        // 5. Arrow function multiplication
+        const multiplyArrow = (a, b) => a * b;
+
+        // 6. Rest parameters multiplication
+        const multiplyAll = (...numbers) => {
+            return numbers.reduce((acc, num) => acc * num, 1);
+        };
+
+        // 7. Power function (multiplication-based)
+        function power(base, exponent) {
+            let result = 1;
+            for (let i = 0; i < exponent; i++) {
+                result = multiply(result, base);
+            }
+            return result;
+        }
+
+        // ============ REAL-WORLD FUNCTIONS ============
+
+        // Price calculation with tax
+        function calculateTotal(price, quantity, taxRate = 0.1) {
+            let subtotal = multiply(price, quantity);
+            let tax = multiply(subtotal, taxRate);
+            return subtotal + tax;
+        }
+
+        // Area calculations
+        function rectangleArea(length, width) {
+            return multiply(length, width);
+        }
+
+        function circleArea(radius) {
+            return multiply(Math.PI, multiply(radius, radius));
+        }
+
+        // Time calculations
+        function convertToSeconds(hours, minutes, seconds = 0) {
+            return multiply(hours, 3600) + multiply(minutes, 60) + seconds;
+        }
+
+        function calculateWorkPay(hours, hourlyRate, overtimeRate = 1.5) {
+            let regularHours = Math.min(hours, 40);
+            let overtimeHours = Math.max(0, hours - 40);
+            
+            let regularPay = multiply(regularHours, hourlyRate);
+            let overtimePay = multiply(multiply(overtimeHours, hourlyRate), overtimeRate);
+            
+            return regularPay + overtimePay;
+        }
+
+        // Game score calculation
+        function calculateGameScore(basePoints, multiplier, bonusRound = false) {
+            let score = multiply(basePoints, multiplier);
+            if (bonusRound) {
+                score = multiply(score, 2);
+            }
+            return score;
+        }
+
+        // Object parameter example
+        function calculateVolume({length, width, height}) {
+            return multiply(multiply(length, width), height);
+        }
+
+        // ============ INTERACTIVE CALCULATOR FUNCTIONS ============
+
+        function calculateBasic() {
+            const num1 = parseFloat(document.getElementById('num1').value) || 0;
+            const num2 = parseFloat(document.getElementById('num2').value) || 0;
+            
+            const result = multiply(num1, num2);
+            
+            displayResult(`
+                <strong>Basic Multiplication:</strong><br>
+                Function: multiply(${num1}, ${num2})<br>
+                Result: ${num1} × ${num2} = <span style="color: #e74c3c; font-size: 1.2em;">${result}</span>
+            `);
+        }
+
+        function calculateThree() {
+            const num1 = parseFloat(document.getElementById('num1').value) || 0;
+            const num2 = parseFloat(document.getElementById('num2').value) || 0;
+            const num3 = parseFloat(document.getElementById('num3').value) || 0;
+            
+            const result = multiplyThree(num1, num2, num3);
+            
+            displayResult(`
+                <strong>Three-Parameter Multiplication:</strong><br>
+                Function: multiplyThree(${num1}, ${num2}, ${num3})<br>
+                Result: ${num1} × ${num2} × ${num3} = <span style="color: #e74c3c; font-size: 1.2em;">${result}</span>
+            `);
+        }
+
+        function calculatePower() {
+            const base = parseFloat(document.getElementById('num1').value) || 0;
+            const exponent = parseFloat(document.getElementById('num2').value) || 0;
+            
+            const result = power(base, exponent);
+            
+            displayResult(`
+                <strong>Power Function (Using Multiplication):</strong><br>
+                Function: power(${base}, ${exponent})<br>
+                Result: ${base}^${exponent} = <span style="color: #e74c3c; font-size: 1.2em;">${result}</span>
+            `);
+        }
+
+        function calculateArray() {
+            const arrayInput = document.getElementById('arrayInput').value;
+            const numbers = arrayInput.split(',').map(num => parseFloat(num.trim())).filter(num => !isNaN(num));
+            
+            if (numbers.length === 0) {
+                displayResult('<span style="color: red;">Please enter valid numbers separated by commas!</span>');
+                return;
+            }
+            
+            const result = multiplyArray(numbers);
+            
+            displayResult(`
+                <strong>Array Multiplication:</strong><br>
+                Function: multiplyArray([${numbers.join(', ')}])<br>
+                Result: ${numbers.join(' × ')} = <span style="color: #e74c3c; font-size: 1.2em;">${result}</span>
+            `);
+        }
+
+        function calculatePrice() {
+            const price = 15.99;
+            const quantity = 3;
+            const taxRate = 0.08;
+            
+            const total = calculateTotal(price, quantity, taxRate);
+            
+            displayResult(`
+                <strong>Price Calculator with Tax:</strong><br>
+                Function: calculateTotal(${price}, ${quantity}, ${taxRate})<br>
+                Calculation: $${price} × ${quantity} items + ${(taxRate*100)}% tax<br>
+                Result: Total = <span style="color: #27ae60; font-size: 1.2em;">$${total.toFixed(2)}</span>
+            `);
+        }
+
+        function calculateAreas() {
+            const length = 12;
+            const width = 8;
+            const radius = 5;
+            
+            const rectArea = rectangleArea(length, width);
+            const circArea = circleArea(radius);
+            
+            displayResult(`
+                <strong>Area Calculations:</strong><br>
+                Rectangle: rectangleArea(${length}, ${width}) = <span style="color: #3498db;">${rectArea} sq units</span><br>
+                Circle: circleArea(${radius}) = <span style="color: #3498db;">${circArea.toFixed(2)} sq units</span>
+            `);
+        }
+
+        function calculateTime() {
+            const hours = 45;
+            const hourlyRate = 20;
+            
+            const totalSeconds = convertToSeconds(2, 30, 45);
+            const weeklyPay = calculateWorkPay(hours, hourlyRate);
+            
+            displayResult(`
+                <strong>Time & Pay Calculations:</strong><br>
+                Time Conversion: 2h 30m 45s = <span style="color: #9b59b6;">${totalSeconds} seconds</span><br>
+                Weekly Pay: ${hours}h @ $${hourlyRate}/h = <span style="color: #27ae60;">$${weeklyPay.toFixed(2)}</span><br>
+                <small>(Includes overtime at 1.5× rate after 40h)</small>
+            `);
+        }
+
+        function calculateGame() {
+            const basePoints = 150;
+            const multiplier = 4;
+            const bonusRound = true;
+            
+            const finalScore = calculateGameScore(basePoints, multiplier, bonusRound);
+            
+            displayResult(`
+                <strong>Game Score Calculator:</strong><br>
+                Function: calculateGameScore(${basePoints}, ${multiplier}, ${bonusRound})<br>
+                Calculation: ${basePoints} × ${multiplier} × 2 (bonus) = <span style="color: #e67e22; font-size: 1.2em;">${finalScore} points</span>
+            `);
+        }
+
+        function demonstrateAll() {
+            const examples = [
+                `multiply(7, 8) = ${multiply(7, 8)}`,
+                `multiplyThree(2, 3, 4) = ${multiplyThree(2, 3, 4)}`,
+                `multiplyWithDefault(5) = ${multiplyWithDefault(5)}`,
+                `multiplyArray([2, 3, 4, 5]) = ${multiplyArray([2, 3, 4, 5])}`,
+                `power(2, 8) = ${power(2, 8)}`,
+                `calculateTotal(10.99, 2, 0.07) = $${calculateTotal(10.99, 2, 0.07).toFixed(2)}`
+            ];
+            
+            displayResult(`
+                <strong>All Function Demonstrations:</strong><br>
+                ${examples.join('<br>')}
+            `);
+        }
+
+        function displayResult(content) {
+            document.getElementById('output').innerHTML = content;
+        }
+
+        // ============ DEMONSTRATION ON PAGE LOAD ============
+        window.addEventListener('load', function() {
+            console.log('=== MULTIPLICATION FUNCTIONS DEMONSTRATION ===');
+            
+            // Basic function examples
+            console.log('1. Basic Functions:');
+            console.log('multiply(6, 7) =', multiply(6, 7));
+            console.log('multiplyThree(2, 3, 4) =', multiplyThree(2, 3, 4));
+            console.log('multiplyWithDefault(5) =', multiplyWithDefault(5));
+            
+            // Array and rest parameters
+            console.log('\n2. Array Functions:');
+            console.log('multiplyArray([2, 3, 4]) =', multiplyArray([2, 3, 4]));
+            console.log('multiplyAll(1, 2, 3, 4, 5) =', multiplyAll(1, 2, 3, 4, 5));
+            
+            // Real-world examples
+            console.log('\n3. Real-world Functions:');
+            console.log('calculateTotal(19.99, 3, 0.08) = $', calculateTotal(19.99, 3, 0.08).toFixed(2));
+            console.log('rectangleArea(15, 10) =', rectangleArea(15, 10));
+            console.log('calculateGameScore(200, 3, true) =', calculateGameScore(200, 3, true));
+            
+            // Display initial message
+            displayResult(`
+                <strong>🎉 Multiplication Functions Loaded!</strong><br>
+                • All functions use parameters to perform multiplication<br>
+                • Try the interactive calculators above<br>
+                • Check the browser console for more examples<br>
+                • Functions demonstrate: basic, default, rest, and object parameters
+            `);
+        });
+    </script>
+</body>
+</html>
