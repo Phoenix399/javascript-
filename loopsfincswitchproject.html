@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Methods and Loops</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #dff9fb;
+            padding: 20px;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #0984e3;
+            text-align: center;
+        }
+        .output {
+            background: #f1f2f6;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: monospace;
+        }
+        button {
+            background-color: #00cec9;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #55efc4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🔁 Methods and Loops Project</h2>
+        <button onclick="runProject()">Run Code</button>
+        <div class="output" id="result">Results will appear here...</div>
+    </div>
+
+    <script>
+        function runProject() {
+            let output = "";
+
+            // 1. Random set of numbers (e.g., 5 random numbers between 1 and 100)
+            output += "Random Numbers:\n";
+            for (let i = 0; i < 5; i++) {
+                let randomNum = Math.floor(Math.random() * 100) + 1;
+                output += "➤ " + randomNum + "\n";
+            }
+
+            // 2. Current date
+            const date = new Date();
+            output += "\nCurrent Date:\n➤ " + date.toLocaleString() + "\n";
+
+            // 3. Rounded random number (e.g., between 0 and 1)
+            const raw = Math.random();
+            const rounded = Math.round(raw * 100) / 100;
+            output += "\nRounded Random Number (0–1):\n➤ " + rounded;
+
+            // Display results
+            document.getElementById("result").innerText = output;
+        }
+    </script>
+</body>
+</html>
