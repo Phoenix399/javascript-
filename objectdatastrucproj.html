@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Data Structure and Array</title>
+</head>
+<body>
+    <h1>Object Data Structure and Array</h1>
+    <div id="output"></div>
+
+    <script>
+        // Object
+        let student = {
+            name: "Nutifafa",
+            age: 14,
+            grade: "8th",
+            hobby: "Programming"
+        };
+
+        // Array
+        let fruits = ["Apple", "Banana", "Orange", "Grapes"];
+
+        // Output container
+        let out = document.getElementById("output");
+
+        // Display object values
+        out.innerHTML += "<h2>Student Details:</h2>";
+        out.innerHTML += "Name: " + student.name + "<br>";
+        out.innerHTML += "Age: " + student.age + "<br>";
+        out.innerHTML += "Grade: " + student.grade + "<br>";
+        out.innerHTML += "Hobby: " + student.hobby + "<br><br>";
+
+        // Display array by index
+        out.innerHTML += "<h2>Fruits:</h2>";
+        out.innerHTML += "First Fruit: " + fruits[0] + "<br>";
+        out.innerHTML += "Second Fruit: " + fruits[1] + "<br>";
+        out.innerHTML += "All Fruits: " + fruits.join(", ") + "<br>";
+
+        // Pop
+        let removedFruit = fruits.pop();
+        out.innerHTML += "Removed Fruit: " + removedFruit + "<br>";
+        out.innerHTML += "Fruits After Removal: " + fruits.join(", ") + "<br>";
+
+        // Push example
+        fruits.push("Mango");
+        out.innerHTML += "After Adding Mango: " + fruits.join(", ") + "<br>";
+    </script>
+</body>
+</html>
