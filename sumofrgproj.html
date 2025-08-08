@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Arguments</title>
+</head>
+<body>
+    <h1>Sum of Arguments</h1>
+    <div id="output"></div>
+
+    <script>
+        // Function to sum arguments
+        function sumOfArguments(...numbers) {
+            let sum = 0;
+            for (let num of numbers) {
+                sum += num;
+            }
+            return sum;
+        }
+
+        // Using the function
+        let total1 = sumOfArguments(5, 10, 15);
+        let total2 = sumOfArguments(12, 8, 20, 5, 10);
+
+        // Object to store results
+        let results = {
+            firstSet: total1,
+            secondSet: total2
+        };
+
+        // Output to page
+        let out = document.getElementById("output");
+        out.innerHTML += "Sum of (5, 10, 15) = " + total1 + "<br>";
+        out.innerHTML += "Sum of (12, 8, 20, 5, 10) = " + total2 + "<br>";
+        out.innerHTML += "<br><strong>Results Object:</strong> " + JSON.stringify(results);
+    </script>
+</body>
+</html>
