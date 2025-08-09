@@ -1,0 +1,52 @@
+body {
+
+margin: 0;
+
+height: 100vh;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+justify-content: center;
+
+font-family: Arial, sans-serif;
+
+}
+
+h1 {
+
+text-align: center;
+
+margin-bottom: 30px;
+
+}
+
+fieldset {
+
+padding: 20px;
+
+border: 1px solid blue;
+
+min-width: 300px;
+
+}
+
+label {
+
+display: inline-block;
+
+width: 80px;
+
+margin-bottom: 10px;
+
+}
+
+input {
+
+margin-bottom: 10px;
+
+}
+
