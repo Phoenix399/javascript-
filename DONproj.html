@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML DOM Structure Project</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h2 { color: darkblue; }
+        #output, #arrayOutput { margin-top: 10px; font-weight: bold; }
+        button { margin-top: 10px; padding: 5px 10px; }
+    </style>
+</head>
+<body>
+
+    <h2>Accessing Values with HTML DOM</h2>
+
+    <!-- Object Section -->
+    <p id="objValue">Object Value will appear here.</p>
+
+    <!-- Array Section -->
+    <p id="arrayOutput">Array Values will appear here.</p>
+
+    <!-- Buttons -->
+    <button onclick="showObjectValue()">Show Object Value</button>
+    <button onclick="assignValue()">Assign Value to Another Node</button>
+    <button onclick="showArray()">Show Array</button>
+    <button onclick="popArray()">Pop Last Item</button>
+
+    <script>
+        // Step 1: Create an object and array
+        let student = { name: "Alex", age: 14, grade: "8th" };
+        let fruits = ["Apple", "Banana", "Cherry", "Mango"];
+
+        // Step 2: Show object value using object key
+        function showObjectValue() {
+            document.getElementById("objValue").innerText = "Student Name: " + student.name;
+        }
+
+        // Step 3: Assign one node's value to another node
+        function assignValue() {
+            let text = document.getElementById("objValue").innerText;
+            document.getElementById("arrayOutput").innerText = text; // Assigning value
+        }
+
+        // Step 4: Display array using join()
+        function showArray() {
+            document.getElementById("arrayOutput").innerText = "Fruits: " + fruits.join(", ");
+        }
+
+        // Step 5: Use pop() to remove last item
+        function popArray() {
+            fruits.pop(); // Remove last element
+            showArray(); // Update display
+        }
+    </script>
+
+</body>
+</html>
