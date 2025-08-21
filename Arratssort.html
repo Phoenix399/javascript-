@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>JavaScrit Array Sort</h2>
+        <p>Click on the button to sort the array in ascending order </p>
+<button onclick="Ascending()">Ascending order</button>
+<button onclick="Descending()" >Descending order</button>    
+<p id="result"></p>
+<script>
+    var points = [40 , 100 , 1 , 5, 25 ,10]
+document.getElementById("result").innnerHTML = points;
+function Ascending() {
+    points.sort(function(a, b){return a - b});
+document.getElementId("result").innerHTML = points;
+}
+function Descending(){
+    points.sort(function(a, b){return b - a});
+    document.getElemenById("result").innnerHTML = points;
+
+
+}
+</script>
+
+   </body>
+</html>
