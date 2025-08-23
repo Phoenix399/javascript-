@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class in JS Example</title>
+</head>
+<body>
+  <h2>Class in JavaScript Demo</h2>
+  <div id="output"></div>
+
+  <script>
+    // Base class
+    class Car {
+      constructor(brand, year) {
+        this.brand = brand;
+        this.year = year;
+      }
+
+      // Instance method
+      details() {
+        return `${this.brand} was made in ${this.year}.`;
+      }
+
+      // Static method
+      static info() {
+        return "Cars are vehicles with wheels and engines.";
+      }
+    }
+
+    // Child class (inheritance)
+    class ElectricCar extends Car {
+      constructor(brand, year, battery) {
+        super(brand, year); // call parent constructor
+        this.battery = battery;
+      }
+
+      // Extra method
+      batteryInfo() {
+        return `${this.brand} has a ${this.battery} kWh battery.`;
+      }
+    }
+
+    // Create object
+    const myCar = new ElectricCar("Tesla", 2024, 100);
+
+    // Display results in HTML
+    const output = document.getElementById("output");
+    output.innerHTML = `
+      <p>${myCar.details()}</p>
+      <p>${myCar.batteryInfo()}</p>
+      <p>${Car.info()}</p>
+    `;
+  </script>
+</body>
+</html>
