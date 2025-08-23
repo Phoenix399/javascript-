@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Code Error Handler</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      font-family: monospace;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      width: 50%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    #output {
+      border: 1px solid #ccc;
+      padding: 10px;
+      min-height: 50px;
+      white-space: pre-wrap;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+    mark {
+      background: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Code Error Handler</h2>
+
+  <!-- Code box -->
+  <textarea id="codeBox" placeholder="Type your JavaScript code here..."></textarea>
+  <br>
+  <button onclick="checkErrors()">Check Errors</button>
+  <br><br>
+
+  <!-- Search box -->
+  <input type="text" id="searchBox" placeholder="Search inside your code..." oninput="searchCode()">
+
+  <h3>Output:</h3>
+  <div id="output"></div>
+
+  <script>
+    function checkErrors() {
+      const code = document.getElementById("codeBox").value;
+      const output = document.getElementById("output");
+
+      try {
+        // Try to create a function with the code (parses without running)
+        new Function(code);
+        output.innerHTML = "<span class='success'>✅ No syntax errors found.</span>";
+      } catch (err) {
+        output.innerHTML = "<span class='error'>❌ Error: " + err.message + "</span>";
+      }
+    }
+
+    function searchCode() {
+      const code = document.getElementById("codeBox").value;
+      const query = document.getElementById("searchBox").value;
+      const output = document.getElementById("output");
+
+      if (query.trim() === "") {
+        checkErrors(); // just re-run error check if no search
+        return;
+      }
+
+      let highlighted = code.replace(
+        new RegExp(query, "gi"),
+        (match) => `<mark>${match}</mark>`
+      );
+
+      output.innerHTML = highlighted || "🔍 No matches found.";
+    }
+  </script>
+</body>
+</html>
