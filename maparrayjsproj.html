@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Array Map + Sort in JS</h2>
+
+  <button onclick="sortAscending()">Ascending</button>
+  <button onclick="sortDescending()">Descending</button>
+
+  <p id="result"></p>
+
+  <script>
+    // Original array
+    const numbers = [5, 12, 8, 130, 44];
+
+    // Map the array (example: multiply each number by 2)
+    const mapped = numbers.map(num => num * 2);
+
+    function sortAscending() {
+      let ascending = [...mapped].sort((a, b) => a - b);
+      document.getElementById("result").innerHTML =
+        "Ascending: " + ascending.join(", ");
+    }
+
+    function sortDescending() {
+      let descending = [...mapped].sort((a, b) => b - a);
+      document.getElementById("result").innerHTML =
+        "Descending: " + descending.join(", ");
+    }
+  </script>
+</body>
+</html>
