@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <h2>Convert JavaScript</h2>
+        <p id="demo"></p>
+        <script>
+            function myDisplay(some){
+                document.getElementById("demo").innerHTML = some;
+            }
+
+            function sum(a,b){
+            var sum = a + b;
+            myDisplay(sum);
+            }
+            let myPromise = new Promise(function(myResolve, myReject) {
+                let x = 0;
+
+                // The producing code (this may take some time)
+                //some code(try change x to 5 and see the result)
+                
+                
+                if (x == 0) {
+                  myResolve("OK"); // when successful
+
+                } else {
+                  myReject("Error"); // when error
+                }
+              });
+// consuming code -must wait for a fulfilled Promise
+              myPromise.then(
+                function(value) {sum(5,5);}, // when successful
+                function(error) {myDisplay(error);} // when error
+              );
+            </script>
+    </body>
+</html>
