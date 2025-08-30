@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Age Validation Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Login Form</h2>
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="number" id="age" placeholder="Enter your age">
+    <button onclick="checkForm()">Submit</button>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    function checkForm() {
+      const name = document.getElementById("name").value.trim();
+      const age = document.getElementById("age").value;
+      const msg = document.getElementById("message");
+
+      if (name === "" || age === "") {
+        msg.innerHTML = "⚠️ Please enter both name and age!";
+        msg.className = "message error";
+      } else if (age < 18) {
+        msg.innerHTML = "❌ Sorry " + name + ", you must be 18 or older.";
+        msg.className = "message error";
+      } else {
+        msg.innerHTML = "✅ Welcome, " + name + "! Access Granted.";
+        msg.className = "message success";
+
+    
+      }
+    }
+  </script>
+</body>
+</html>
