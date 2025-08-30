@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Async Await Project</title>
+</head>
+
+<style>
+     body {
+             
+            background: linear-gradient(135deg, #1003c0d2 0%, #0994cf 35%, #13d6e4 100%);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            transition: background 1s;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                  text-align: justify;
+
+                    justify-content: flex-start
+
+          }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+         p {
+            margin-bottom: 20px;
+        }
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            border-width: 0.25em;
+            color: #e61c1c;
+        }
+
+</style>
+
+
+
+<body>
+  <h2>Asynchronous Functions in JS</h2>
+  <p id="result">Loading...</p>
+   <div class="container">
+        <div class="spinner-border" role="status">
+                
+
+  <script>
+    // Simulate an async function (like fetching data from server)
+    async function fetchData() {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve("Data received from server!");
+        }, 2000); // 2 seconds delay
+      });
+    }
+
+    // Function dependent on async result
+    async function processData() {
+      try {
+        let data = await fetchData(); // waits until fetchData is done
+        document.getElementById("result").innerText = "Processed: " + data;
+      } catch (error) {
+        document.getElementById("result").innerText = "Error: " + error;
+      }
+    }
+
+    // Run project function
+    processData();
+  </script>
+</body>
+</html>
